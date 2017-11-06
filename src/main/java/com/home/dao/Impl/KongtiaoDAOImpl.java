@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public class KongtiaoDAOImpl implements IKongtiaoDAO {
+    Kongtiao
     @Override
     public boolean doCreate(Kongtiao vo) throws Exception {
         return false;
@@ -24,7 +25,7 @@ public class KongtiaoDAOImpl implements IKongtiaoDAO {
     }
 
     @Override
-    public User findById(Integer userno) throws Exception {
+    public Kongtiao findById(Integer id) throws Exception {
         return null;
     }
 

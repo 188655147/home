@@ -37,11 +37,11 @@ public interface IDAO<K,V> {
 
     /**
      * 根据用户账号查询指定的雇员信息
-     * @param userno 要查询的用户账号
+     * @param id 要查询的用户账号
      * @return 如果雇员信息存在，则将数据以VO类对象的形式返回，如果雇员数据不存在，则返回null
      * @throws Exception SQL执行异常
      */
-    public User findById(K userno) throws Exception;
+    public V findById(K id) throws Exception;
 
     /**
      * 查询指定数据表的全部记录，并且以集合的形式返回

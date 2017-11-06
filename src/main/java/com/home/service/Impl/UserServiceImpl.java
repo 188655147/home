@@ -17,7 +17,7 @@ public class UserServiceImpl implements IUserService {
     public boolean insert(User vo) throws Exception {
         try {
             //要增加的用户编号如果不存在，则findById()返回的结果就是null，表示可以进行新用户数据的保存
-            if (DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).findById(vo.getUserno()) == null) {
+            if (DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).findById(vo.getId()) == null) {
                 return DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).doCreate(vo);
             }
             return false;
@@ -51,9 +51,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User get(String userno) throws Exception {
+    public User get(Integer id) throws Exception {
         try {
-            return DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).findById(userno);
+            return DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).findById(id);
         } catch (Exception e) {
             throw e;
         } finally {

@@ -20,7 +20,7 @@ public interface IService<K,V> {
      * @return 如果增加数据的ID重复或者保存失败返回false，否则返回true
      * @throws Exception SQL执行异常
      */
-    public boolean insert(User vo) throws Exception;
+    public boolean insert(V vo) throws Exception;
 
     /**
      * 实现修改密码操作，本次要调用IUserDAO.doUpdate()方法
@@ -29,7 +29,7 @@ public interface IService<K,V> {
      * @return 修改成功返回true，否则返回false
      * @throws Exception SQL执行异常
      */
-    public boolean update(User vo) throws Exception;
+    public boolean update(V vo) throws Exception;
 
     /**
      * 执行用户数据的删除操作，可以删除多个雇员信息，调用IUserDAO.doRemoveBatch()方法
@@ -38,16 +38,16 @@ public interface IService<K,V> {
      * @return 删除成功返回true，否则返回false
      * @throws Exception SQL执行异常
      */
-    public boolean delete(Set<Integer> ids) throws Exception;
+    public boolean delete(Set<K> ids) throws Exception;
 
     /**
      * 根据用户编号查找用的的密码，调用IUserDAO.findAll()方法
      *
-     * @param userno 要查找的用户编号
+     * @param id 要查找的用户编号
      * @return 如果找到了用户信息以VO对象返回，否则返回null
      * @throws Exception SQL执行异常
      */
-    public User get(String userno) throws Exception;
+    public V get(K id) throws Exception;
 
     /**
      * 查询全部用户信息，调用IUserDAO.findAll()方法
@@ -55,7 +55,7 @@ public interface IService<K,V> {
      * @return 查询结果以List集合的形式返回，如果没有数据则集合的长度为0
      * @throws Exception SQL执行异常
      */
-    public List<User> list() throws Exception;
+    public List<V> list() throws Exception;
 
     /**
      * 实现数据的模糊查询与数据统计，要调用IUserDAO接口的两个方法：<br>

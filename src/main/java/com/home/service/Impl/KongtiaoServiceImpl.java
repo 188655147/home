@@ -13,7 +13,7 @@ import java.util.Set;
 public class KongtiaoServiceImpl implements IKongtiaoService {
     private Connection conn;
     private PreparedStatement pstmt;
-    public KongtiaoDAOImpl(Connection conn){
+    public KongtiaoServiceImpl(Connection conn){
         this.conn = conn;
     }
     @Override

@@ -67,11 +67,11 @@ public class UserDAOImpl implements IUserDAO {
     /**
      * 根据用户编号查询密码
      */
-    public User findById(String userno) throws Exception {
+    public User findById(Integer id) throws Exception {
         User vo = null;
         String sql = "SELECT userno,password FROM user WHERE userno=?";
         this.pstmt = this.conn.prepareStatement(sql);
-        this.pstmt.setString(1, userno);
+        this.pstmt.setInt(1, id);
         ResultSet rs = this.pstmt.executeQuery();
         if (rs.next()) {
             vo = new User();
