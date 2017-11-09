@@ -7,6 +7,7 @@ import com.home.vo.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -29,7 +30,11 @@ public class KongtiaoDAOImpl implements IKongtiaoDAO {
         this.pstmt.setInt(4,vo.getWendu());
         this.pstmt.setInt(5,vo.getFengli());
         this.pstmt.setInt(6,vo.getDingshi());
-        this.pstmt.setInt(7,vo.getUserW());
+        if (vo.getUserByUserW() == null) {
+            this.pstmt.setNull(7, Types.NULL);
+        }else {
+            this.pstmt.setInt(7,vo.getUserByUserW().getId());
+        }
         this.pstmt.setDouble(8,vo.getFengxiang());
         this.pstmt.setByte(9,vo.getKaiguang());
         this.pstmt.setByte(10,vo.getSaofeng());
@@ -48,7 +53,11 @@ public class KongtiaoDAOImpl implements IKongtiaoDAO {
         this.pstmt.setInt(3,vo.getWendu());
         this.pstmt.setInt(4,vo.getFengli());
         this.pstmt.setInt(5,vo.getDingshi());
-        this.pstmt.setInt(6,vo.getUserW());
+        if (vo.getUserByUserW() == null) {
+            this.pstmt.setNull(6, Types.NULL);
+        }else {
+            this.pstmt.setInt(6,vo.getUserByUserW().getId());
+        }
         this.pstmt.setDouble(7,vo.getFengxiang());
         this.pstmt.setByte(8,vo.getKaiguang());
         this.pstmt.setByte(9,vo.getSaofeng());
@@ -131,6 +140,41 @@ public class KongtiaoDAOImpl implements IKongtiaoDAO {
 
     @Override
     public Integer getAllCount(String column, String keyWord) throws Exception {
+        return null;
+    }
+
+    @Override
+    public Kongtiao findByIdDetails(Integer ktid) throws Exception {
+        Kongtiao vo = null;
+        String sql = "SELECT ktname,moshi,wendu,fengli,dingshi,user_w,fengxiang,kaiguang,saofeng," +
+                "shuimian,shuxian FROM kongtiao WHERE ktid=?";
+        this.pstmt = this.conn.prepareStatement(sql);
+        this.pstmt.setInt(1,ktid);
+        ResultSet rs = this.pstmt.executeQuery();
+        if(rs.next()){
+            vo = new Kongtiao();
+            vo.setKtname(rs.getString(1));
+            vo.setMoshi(rs.getString(2));
+            vo.setWendu(rs.getInt(3));
+            vo.setFengli(rs.getInt(4));
+            vo.setDingshi(rs.getInt(5));
+            vo.setUserW(rs.getInt(6));
+            vo.setFengxiang(rs.getDouble(7));
+            vo.setKaiguang(rs.getByte(8));
+            vo.setSaofeng(rs.getByte(9));
+            vo.setShuimian(rs.getByte(10));
+            vo.setShuxian(rs.getByte(11));
+        }
+        return vo;
+    }
+
+    @Override
+    public List<Kongtiao> findAllDetails() throws Exception {
+        return null;
+    }
+
+    @Override
+    public List<Kongtiao> findAllSplitDetails(Integer currentPage, Integer lineSize, String column, String keyWord) throws Exception {
         return null;
     }
 }

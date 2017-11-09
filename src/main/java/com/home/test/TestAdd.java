@@ -1,17 +1,15 @@
 package com.home.test;
 
 import com.home.factory.ServiceFactory;
+import com.home.vo.Kongtiao;
 import com.home.vo.User;
 
 public class TestAdd {
     public static void main(String[] args) {
-        User vo = new User();
-        vo.setUserno("11112246");
-        vo.setPassword("123123123");
-        vo.setName("王者");
-        vo.setId(27);
+        Kongtiao vo = new Kongtiao();
+        vo.setKtid(1);
         try{
-            System.out.println(ServiceFactory.getIUserServiceInstance().insert(vo));
+            System.out.println(ServiceFactory.getIKongtiaoServiceInstance().get(vo));
         } catch (Exception e) {
             e.printStackTrace();
         }
