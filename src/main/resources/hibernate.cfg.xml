@@ -4,10 +4,10 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://localhost:3306/u-home</property>
+    <property name="connection.url">jdbc:mysql://120.77.222.221:3306/home</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="connection.driver_user">root</property>
-    <mapping class="com.home.vo.Kaiguang"/>
+      <mapping class="com.home.vo.Kaiguang"/>
     <mapping class="com.home.vo.Kongtiao"/>
     <mapping class="com.home.vo.User"/>
     <!-- <property name="connection.username"/> -->

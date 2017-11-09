@@ -9,9 +9,9 @@ import java.sql.DriverManager;
  */
 public class DatabaseConnection {
     private static final String DBDRIVER = "com.mysql.jdbc.Driver";
-    private static final String DBURL = "jdbc:mysql://localhost:3306/u-home?characterEncoding=UTF-8";
+    private static final String DBURL = "jdbc:mysql://120.77.222.221:3306/home?characterEncoding=UTF-8";
     private static final String DBUSER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "yinghan9.12.25";
     private Connection conn = null;
 
     /**
