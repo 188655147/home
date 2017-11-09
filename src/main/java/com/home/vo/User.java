@@ -1,9 +1,7 @@
 package com.home.vo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class User {
@@ -11,6 +9,8 @@ public class User {
     private String userno;
     private String password;
     private String name;
+    private Collection<Kaiguang> kaiguangsById;
+    private Collection<Kongtiao> kongtiaosById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -74,5 +74,23 @@ public class User {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "userByUserW")
+    public Collection<Kaiguang> getKaiguangsById() {
+        return kaiguangsById;
+    }
+
+    public void setKaiguangsById(Collection<Kaiguang> kaiguangsById) {
+        this.kaiguangsById = kaiguangsById;
+    }
+
+    @OneToMany(mappedBy = "userByUserW")
+    public Collection<Kongtiao> getKongtiaosById() {
+        return kongtiaosById;
+    }
+
+    public void setKongtiaosById(Collection<Kongtiao> kongtiaosById) {
+        this.kongtiaosById = kongtiaosById;
     }
 }

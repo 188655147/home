@@ -1,9 +1,6 @@
 package com.home.vo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Kaiguang {
@@ -15,6 +12,7 @@ public class Kaiguang {
     private Double nongdu;
     private Double qiangdu;
     private Integer userW;
+    private User userByUserW;
 
     @Id
     @Column(name = "kgid", nullable = false)
@@ -126,5 +124,15 @@ public class Kaiguang {
         result = 31 * result + (qiangdu != null ? qiangdu.hashCode() : 0);
         result = 31 * result + (userW != null ? userW.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_w", referencedColumnName = "id")
+    public User getUserByUserW() {
+        return userByUserW;
+    }
+
+    public void setUserByUserW(User userByUserW) {
+        this.userByUserW = userByUserW;
     }
 }
