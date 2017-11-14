@@ -48,6 +48,7 @@
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
+  <!-- 拦截器 -->
   <filter>
     <filter-name>struts2</filter-name>
     <filter-class>
