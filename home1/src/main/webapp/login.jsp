@@ -36,36 +36,33 @@
             margin-top:-25px;
             text-align: center;
             width: 300px;
-            height: 250px;
+            height: 200px;
             border-color: #003366;
             background-color: white;
             filter:alpha(Opacity=70); /*不透明度*/
             -moz-opacity:0.7;
             opacity: 0.7;
         }
-        .ue-clear label{
-            margin-left: 10px;
-            border-left:10px;
-            width: 30px;
-        }
-        .ue-clear input{
-            margin-left: 10px;
+        .ue-clear{
+            text-align: right;
+            margin-right: 40px;
         }
     </style>
 </head>
 <script type="text/javascript">
     function confirmlogin() {
-        var username = document.getElementById("username");
+        var userno = document.getElementById("userno");
         var password = document.getElementById("password");
-        if (username.value == "" || password.value == "") {
+        if (userno.value == "" || password.value == "") {
             window.alert("登录ID、登录密码不能为空！");
             return false;
+        } else{
+            return document.from1.submit();
         }
-        return true;
     }
 </script>
 <body>
-<form name="login" action="LoginAction" method="post">
+<form name="from1" action="login" method="post">
     <div id="container">
         <div id="bd">
             <div class="login">
@@ -75,11 +72,11 @@
                 <div class="login-input">
                     <p class="user ue-clear">
                         <label>用户名</label>
-                        <input type="text" id="username" name="username"/>
+                        <input type="text" id="userno" name="user.userno"/>
                     </p>
                     <p class="password ue-clear">
-                        <lable>&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码</lable>
-                        <input type="password" id="password" name="password"/>
+                        <lable>密&nbsp;码</lable>
+                        <input type="password" id="password" name="user.password"/>
                     </p>
                 </div>
                 <div class="login-below">

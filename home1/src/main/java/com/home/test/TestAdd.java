@@ -8,7 +8,7 @@ public class TestAdd {
         Kongtiao vo = new Kongtiao();
         vo.setKtid(1);
         try{
-            System.out.println(ServiceFactory.getIKongtiaoServiceInstance().list().toString());
+            System.out.println(ServiceFactory.getIKaiguangServiceInstance().get(1).getDeng().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -10,7 +10,11 @@
 
     <package name="default" namespace="/" extends="struts-default">
         <global-allowed-methods>regex:.*</global-allowed-methods>
-        <action name="login" class="LoginAction">
+        <action name="login" class="com.home.action.LoginAction">
+            <result name="success">index.jsp</result>
+            <result name="relogin">login.jsp</result>
+        </action>
+        <action name="kaiguang" class="com.home.action.KaiguangAction">
             <result name="success">index.jsp</result>
         </action>
     </package>
