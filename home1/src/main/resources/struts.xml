@@ -5,13 +5,16 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <constant name="struts.devMode" value="true"/>
 
     <package name="default" namespace="/" extends="struts-default">
         <global-allowed-methods>regex:.*</global-allowed-methods>
         <action name="login" class="com.home.action.LoginAction">
-            <result name="success">index.jsp</result>
+            <result type="redirectAction" name="success">
+                <param name="actionName">kaiguang</param>
+                <param name="namespace">/</param>
+            </result>
             <result name="relogin">login.jsp</result>
         </action>
         <action name="kaiguang" class="com.home.action.KaiguangAction">

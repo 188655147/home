@@ -31,6 +31,11 @@ public class Kaiguang {
     }
 
     public void setDeng(Byte deng) {
+//        if(deng == 1){
+//            this.deng = "开";
+//        } else{
+//            this.deng = "关";
+//        }
         this.deng = deng;
     }
 
