@@ -8,6 +8,12 @@
     <modules>
         <module>home1</module>
         <module>home2</module>
+        <module>tupianjianding</module>
+        <module>weizhi</module>
+        <module>robot</module>
+        <module>scan</module>
+        <module>shop</module>
+        <module>shop2</module>
     </modules>
     <name>home Maven Webapp</name>
     <properties>
@@ -56,7 +62,18 @@
             <artifactId>classmate</artifactId>
             <version>1.3.3</version>
         </dependency>
-
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>

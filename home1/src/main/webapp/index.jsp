@@ -106,7 +106,7 @@
                     <img src="images/1.jpg" alt="">
                     <div class="transparent">
                         <div class="silder-main-1">
-                            <button name="dengkg" id="deng">${kaiguang.deng}</button>
+                            <button name="dengkg" id="deng">${kaiguang.deng == 1 ? "开" : "关"}</button>
                         </div>
                     </div>
                 </div>
