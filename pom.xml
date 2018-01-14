@@ -13,7 +13,6 @@
         <module>robot</module>
         <module>scan</module>
         <module>shop</module>
-        <module>shop2</module>
     </modules>
     <name>home Maven Webapp</name>
     <properties>

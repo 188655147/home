@@ -1,4 +1,4 @@
-package com.wilya.util.filter;
+package com.wilya.shop.util.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
